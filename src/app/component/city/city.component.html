@@ -1,0 +1,46 @@
+<div class="container  pt-5">
+
+  <div class="row pt-2">
+    <p-dropdown id="number" name="number" [options]="numbers" [(ngModel)]="selectedNumber"></p-dropdown>
+  </div>
+
+  <div class="row pt-2">
+    {{selectedNumber}}
+  </div>
+  <div class="row pt-2">element</div>
+
+  <div class="row pt-2">
+    <p-dropdown id="cities" name="cities" placeholder="select a city" [options]="cities"
+                [(ngModel)]="selectedCity"></p-dropdown>
+  </div>
+  <div class="row pt-2">
+    -----  {{selectedCity.label}} -----
+  </div>
+  <div class="row pt-2">element pré selectionné (la valeur selectionné n'est pas la première valeur de la liste )</div>
+  <div class="row pt-2">
+    <p-dropdown id="countries" name="countries" [options]="countries" optionLabel="fullName"
+                [(ngModel)]="selectedCountry"></p-dropdown>
+  </div>
+  <div class="row pt-2">
+    selectedCountry.id =  {{selectedCountry.code}} --- selectedCountry.fullName =  {{selectedCountry.fullName}}
+  </div>
+  <div class="row pt-2" *ngIf="selectedCountry.code === 'Fr'" style="background-color: blue">
+
+    you live in Fance
+  </div>
+
+  <div class="row pt-2" *ngIf="selectedCountry.code === 'TN'" style="background-color: red">
+
+    you live in Tunisia
+  </div>
+
+  <div class="row pt-2" *ngIf="selectedCountry.code === 'USA'" style="background-color: antiquewhite">
+
+    you live in USA
+  </div>
+
+  <div class="row pt-2" *ngIf="selectedCountry.code === 'DZ'" style="background-color: green">
+
+    you live in Algeria
+  </div>
+</div>
